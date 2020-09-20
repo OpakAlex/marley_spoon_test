@@ -20,6 +20,7 @@
 ### What is good to improve:
  * Add cache for http requests
  * Add endpoint for filters (by chef / tags / title)
+ * Handle api errors in more human way (show some message)
  * Add HELM chart for deployment
  * Create ci config
  * Fix styles inside docker (i don't known how you want to deploy)
