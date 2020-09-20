@@ -1,0 +1,15 @@
+<div class="justify-content d-flex flex-column">
+  <div class="p2">
+    <div class="card recipe-item-card">
+      <img src="<%= @item.asset.url %>" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title color-black"><%= @item.title %></h5>
+        <p class="card-text color-black">Tags: <%= @item.tags.map(&:name).join(', ')%></p>
+        <p class="card-text color-black"> <%= @item.description %></p>
+        <%if @item.chef%>
+          <p class="card-text color-black"> Chef: <%= @item.chef&.name %> </p>
+        <%end%>
+      </div>
+    </div>
+  </div>
+</div>

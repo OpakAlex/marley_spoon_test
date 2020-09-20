@@ -1,0 +1,14 @@
+<div class="justify-content d-flex flex-column">
+  <%@items.each do |recipe|%>
+    <div class="p2">
+      <div class="card recipe-list-card">
+        <img src="<%= recipe.asset.url %>" class="card-img-top" alt="...">
+        <div class="card-body">
+          <a href="<%= recipe_path(recipe.id)%>">
+            <h5 class="card-title color-black"><%= recipe.title %></h5>
+          </a>
+        </div>
+      </div>
+    </div>
+  <%end%>
+</div>
