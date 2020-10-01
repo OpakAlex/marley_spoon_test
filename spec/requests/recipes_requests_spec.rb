@@ -21,5 +21,11 @@ RSpec.describe RecipesController, type: :request do
       get recipe_path(id)
       expect(response.status).to eq 200
     end
+
+    it 'return 404 error if id not found' do
+      id = 'wrong_id'
+      get recipe_path(id)
+      expect(response.status).to eq 404
+    end
   end
 end

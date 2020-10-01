@@ -7,7 +7,7 @@
         <p class="card-text color-black">Tags: <%= @item.tags.map(&:name).join(', ')%></p>
         <p class="card-text color-black"> <%= @item.description %></p>
         <%if @item.chef%>
-          <p class="card-text color-black"> Chef: <%= @item.chef&.name %> </p>
+          <p class="card-text color-black"> Chef: <%= @item.chef.name %> </p>
         <%end%>
       </div>
     </div>

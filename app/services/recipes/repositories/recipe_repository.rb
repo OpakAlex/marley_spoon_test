@@ -48,6 +48,8 @@ module Recipes
       end
 
       def create_recipe(item, assets, chefs, tags)
+        return if item.blank?
+
         ::Recipes::Entities::Recipe.wrap_entity(
           item,
           find_asset(sys_id('photo', item), assets),
@@ -57,6 +59,8 @@ module Recipes
       end
 
       def sys_ids(type, item)
+        return unless item
+
         type_fields = item['fields'][type]
         return [] unless type_fields
 
@@ -64,13 +68,20 @@ module Recipes
       end
 
       def sys_id(type, item)
-        type_fields = item['fields'][type]
+        return unless item
+
+        fields = item['fields']
+        return if fields.blank?
+
+        type_fields = fields[type]
         return unless type_fields
 
         type_fields['sys']['id']
       end
 
       def find_tags(ids, tags)
+        return [] if ids.blank?
+
         tags.select { |tag| ids.include?(tag.id) }
       end
 
